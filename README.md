@@ -1,42 +1,18 @@
 # HumanWrite
 
-这个仓库放的是一个写作改写技能。
+这个仓库放的是一个写作改写技能。我平时用它整理笔记，也用它改博客草稿。很多草稿的问题不在内容本身，问题在句子太像模型口播，读起来发满、发硬、发假。这个技能就是拿来收这种地方的。
 
-我主要拿它做两件事：
+中文和英文都能用。它处理的是笔记、草稿、博客这类文字。公文、论文、法律条文我会单独处理，不放在这里。
 
-1. 整理零散笔记
-2. 把博客草稿里的 AI 味压下去
+用的时候我只盯几件事：原文重点别丢，顺序能理顺就理顺，模型腔压下去，正文里有引用的话，把链接补到对应句子后面。大概就是这么简单。
 
-中文和英文都能用。
+## 什么时候会用到
 
-它不追求把文字改得多漂亮，重点是三件事：
+笔记很散，想整理成一篇能读的文章时，我会用它。博客草稿太像模型写的，想把语气压平时，我也会用它。原文判断想保留，只想把表达理顺，或者正文里已经带了引用，想把来源补清楚，也都适合放进这套技能里。
 
-1. 原文重点别丢
-2. 句子读起来像正常人会写的
-3. 需要的话把引用和链接补清楚
+## 目录
 
-## 适合什么
-
-这套技能适合这些场景：
-
-1. 笔记很散，想整理成一篇能读的文章
-2. 博客草稿太像模型写的，想把语气压平
-3. 原文判断想保留，只想把表达和顺序理顺
-4. 要做改写前后对比
-5. 要把查到的文章观点接进正文，再把链接补到对应句子后面
-
-## 不适合什么
-
-这些情况我一般不用它：
-
-1. 正式公文
-2. 学术论文
-3. 法律条文整理
-4. 只查资料，不改文字
-
-## 目录结构
-
-目录不复杂，主要是把规则拆开，后面好改。
+目录不复杂，主要是把不同功能拆开，后面改起来省事。
 
 ```text
 humanwrite/
@@ -53,74 +29,25 @@ humanwrite/
     └── scoring.md
 ```
 
-各文件的作用是这样：
+`SKILL.md` 是主文件，触发条件、改写边界、工作顺序、自检都放在这里。`README.md` 就是这页，给人看。`GITHUB-LAUNCH.md` 放的是发 GitHub 时直接能用的材料，像仓库名、描述、topics 和发帖文案。`agents/openai.yaml` 只管展示名、短描述和默认提示词。
 
-`SKILL.md`
+`references` 目录里放的是展开内容。`forbidden-phrases.md` 记禁用词和禁用句式，`examples.md` 放触发例子、正反例和前后对比，`ai-patterns.md` 收常见 AI 写作模式，`scoring.md` 放五十分评分体系。`analysis-lenses.md` 平时不一定每次都读，只有要把问题继续往深处拆的时候才会用到。
 
-- 主文件
-- 写触发条件、边界、工作顺序、自检
+## 我怎么用
 
-`README.md`
-
-- 给人看的说明页
-- 讲这个技能大概做什么，目录怎么分
-
-`GITHUB-LAUNCH.md`
-
-- 发 GitHub 时直接用的材料
-- 里面放了仓库名、描述、topics、发帖文案
-
-`agents/openai.yaml`
-
-- 放展示名、短描述、默认提示词
-
-`references/forbidden-phrases.md`
-
-- 放禁用词、禁用句式、禁用结构
-
-`references/examples.md`
-
-- 放触发例子、正反例、前后对比
-
-`references/ai-patterns.md`
-
-- 放常见 AI 写作模式
-
-`references/scoring.md`
-
-- 放五十分评分体系
-
-`references/analysis-lenses.md`
-
-- 只有在要往深处拆的时候才用
-- 平时改笔记和博客，不一定每次都要读
-
-## 怎么用
-
-我自己用的时候，顺序很简单。
-
-先看原文到底想说什么，再把 AI 味最重的句子挑出来，然后才开始改。  
-如果原文重点很多，我会先列重点，再动笔。  
-如果里面有引用，我会把链接补到对应句子后面，不放到文末糊成一团。
+顺序很直白。先看原文到底要说什么，再把最像模型口播的句子挑出来。原文重点如果很多，我会先列重点，再开始改。改的时候不追求把句子修得多漂亮，先把假、满、硬这些感觉压下去。原文里有引用，就把链接补到对应句子后面，不往文末堆一串网址。
 
 ## 英文场景
 
-英文也能用。
-
-主要处理这些问题：
-
-1. 句子太像演讲稿
-2. 空提示词太多
-3. 品牌文案味太重
-4. 结构太整齐，读起来发假
+英文也能用。常见情况就是句子太像演讲稿，空提示词太多，品牌文案味太重，或者结构整齐得太用力，读起来发假。
 
 ## 参考过的项目
 
-我参考过一些相近的技能和仓库，主要看它们怎么写触发条件、怎么摆示例、怎么做前后对比：
+我参考过一些相近的技能和仓库，主要是看它们怎么写触发条件，怎么摆示例，怎么做前后对比。这里留几个链接，后面要继续改可以顺手回去看：
 
-1. [Aboudjem/humanizer-skill](https://github.com/Aboudjem/humanizer-skill)
-2. [blader/humanizer](https://github.com/blader/humanizer/blob/main/SKILL.md)
-3. [labarba/sciwrite](https://github.com/labarba/sciwrite)
-4. [openclaw/skills docs-style](https://github.com/openclaw/skills/blob/main/skills/anderskev/docs-style/SKILL.md)
+[Aboudjem/humanizer-skill](https://github.com/Aboudjem/humanizer-skill)  
+[blader/humanizer](https://github.com/blader/humanizer/blob/main/SKILL.md)  
+[labarba/sciwrite](https://github.com/labarba/sciwrite)  
+[openclaw/skills docs-style](https://github.com/openclaw/skills/blob/main/skills/anderskev/docs-style/SKILL.md)
 
-我自己的这套，重点还是放在笔记整理和博客输出，不是做品牌文案，也不是做花哨写作。
+我自己的这套还是围着笔记整理和博客输出转，重点一直放在实用和好改。
