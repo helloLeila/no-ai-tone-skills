@@ -1,0 +1,4 @@
+interface:
+  display_name: "HumanWrite"
+  short_description: "中文英文自然改写、去套话、去模型腔"
+  default_prompt: "使用 $humanwrite 改写这段中文或英文，去掉 AI 味、套话和文案腔，保留原意，必要时给改写前后对比、引用链接和评分。"
