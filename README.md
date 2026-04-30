@@ -1,6 +1,6 @@
-# HumanWrite
+# no-ai-tone-skills
 
-`HumanWrite` 是一个写作改写技能，主要拿来整理笔记、改博客草稿、压掉 AI 生成文本里的模型腔。
+`no-ai-tone-skills` 是一个写作改写技能，主要拿来整理笔记、改博客草稿、压掉 AI 生成文本里的模型腔。
 
 这套技能更适合内容已经有了、表达还不顺的时候。原文重点要保住，顺序能理顺就理顺，正文里有引用的话，就把链接补到对应句子后面。
 
@@ -52,7 +52,7 @@ Rewrite this in plain English and keep the original point.
 目录不复杂，主要是把规则拆开，后面好改。
 
 ```text
-humanwrite/
+no-ai-tone-skills/
 ├── SKILL.md
 ├── README.md
 ├── GITHUB-LAUNCH.md
